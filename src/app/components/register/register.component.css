@@ -1,0 +1,54 @@
+.register-container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .register-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .register-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register-container form div {
+    margin-bottom: 20px; /* Aumente o espaçamento entre os campos do formulário */
+  }
+  
+  .register-container form label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Espaço entre a label e o input */
+    display: block; /* Garante que a label fique acima do input */
+  }
+  
+  .register-container form input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    display: block; /* Garante que o input ocupe toda a largura disponível */
+    width: 100%; /* Faz o input ocupar toda a largura disponível */
+  }
+  
+  .register-container form button {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Adicione espaço acima do botão */
+  }
+  
+  .register-container form button:hover {
+    background-color: #218838;
+  }
+  
