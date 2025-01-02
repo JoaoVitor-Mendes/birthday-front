@@ -1,0 +1,17 @@
+<div class="header">
+  <button (click)="logout()" class="btn btn-logout">Sair</button>
+</div>
+
+<div class="birthday-list-container">
+  <h2>Aniversários</h2>
+  <button (click)="goToNewBirthday()" class="add-button">Novo Aniversário</button>
+  <ul class="birthday-list">
+    <li *ngFor="let birthday of birthdays" class="birthday-item">
+      <span class="birthday-date"><strong>{{ birthday.date }}</strong> - {{ birthday.description }}</span>
+      <div class="button-group">
+        <button (click)="updateBirthday(birthday.id)" class="btn btn-secondary">Atualizar</button>
+        <button (click)="deleteBirthday(birthday.id)" class="btn btn-danger">Deletar</button>
+      </div>
+    </li>
+  </ul>
+</div>

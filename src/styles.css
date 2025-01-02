@@ -1,0 +1,15 @@
+/* Ajuste da cor do texto dos inputs e labels */
+.mat-input-element,
+.mat-form-field-label,
+.mat-form-field-label-wrapper,
+.mat-placeholder-required {
+  color: black !important; /* Define a cor do texto dos inputs e labels como preto */
+}
+
+/* Garantindo que os textos dos inputs e labels mantenham-se pretos mesmo quando focados */
+.mat-input-element:focus,
+.mat-form-field-label:focus,
+.mat-form-field-label-wrapper:focus,
+.mat-placeholder-required:focus {
+  color: black !important;
+}
