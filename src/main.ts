@@ -13,7 +13,6 @@ import { AuthGuard } from './app/guards/auth.guard';
 import { AuthService } from './app/services/auth.service';
 import { registerLocaleData } from '@angular/common';
 import localePt from '@angular/common/locales/pt';
-import moment from 'moment';
 import { default as _rollupMoment } from 'moment';
 
 // Registrar os dados de locale
