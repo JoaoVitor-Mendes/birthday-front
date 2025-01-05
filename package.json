@@ -9,7 +9,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "proxy": "https://api-birthday.onrender.com/api",
   "private": true,
   "dependencies": {
     "@angular/animations": "^19.0.5",
