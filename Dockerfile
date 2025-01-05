@@ -20,6 +20,6 @@ RUN npm run build:prod
 FROM nginx:latest
 COPY ./default.conf /etc/nginx/conf.d/default.conf
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/dist/dwir-app/browser /usr/share/nginx/html/
+COPY --from=builder /app/dist/birthday-app/browser /usr/share/nginx/html/
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
