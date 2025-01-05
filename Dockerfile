@@ -1,14 +1,12 @@
-# Use uma imagem base do Nginx para servir a aplicação
+FROM node:21 as builder
+WORKDIR /app
+COPY . .
+RUN npm install
+RUN npm run build
+
 FROM nginx:alpine
-
-# Copie os arquivos de build da aplicação para o diretório padrão de Nginx
-COPY --from=build /app/dist/birthday-app /usr/share/nginx/html
-
-# Copie a configuração personalizada do Nginx
+COPY --from=builder /app/dist/birthday-app/browser /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
-
-# Exponha a porta 80 para acessar a aplicação
+COPY mime.types /etc/nginx/mime.types
 EXPOSE 80
-
-# Comando para iniciar o Nginx
 CMD ["nginx", "-g", "daemon off;"]
