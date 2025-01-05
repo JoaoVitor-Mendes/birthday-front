@@ -16,14 +16,10 @@ COPY . .
 # Rodar o build da aplicação Angular
 RUN npm run build:prod
 
-# Usar uma imagem base do Nginx para servir a aplicação
-FROM nginx:alpine
-
-# Copiar o build gerado para o diretório do Nginx
-COPY --from=0 /app/dist/birthday-app /usr/share/nginx/html
-
-# Expor a porta 80
+# Stage 2: Serve the Angular application using Nginx
+FROM nginx:latest
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app/dist/dwir-app/browser /usr/share/nginx/html/
 EXPOSE 80
-
-# Iniciar o Nginx
 CMD ["nginx", "-g", "daemon off;"]
